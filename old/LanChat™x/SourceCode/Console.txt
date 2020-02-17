@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <Windows.h>
+
+main()
+{
+
+ while(0==0)
+ {
+
+ FILE *fp;
+ fp = fopen("LOG.txt", "a+");
+ int ch;
+ while ((ch=fgetc(fp))!=EOF)
+ putchar(ch);
+ Sleep(1000);
+ system("cls");
+
+}
+
+}

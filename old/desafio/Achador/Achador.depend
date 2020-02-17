@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1448914761 source:c:\users\arthu_000\desktop\desafio\achador\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

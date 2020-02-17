@@ -1,0 +1,6 @@
+- name: Shutdown target servers
+  hosts: targets
+  become: true
+  tasks:
+    - name: Shutdown
+      command: '/sbin/shutdown -P now'

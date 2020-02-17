@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+
+int main ()
+{
+
+    printf("Digite seu nome: ");
+        char string[100];
+        char nome[100];
+        FILE * fp;
+        gets (nome);
+        fp=fopen("LOG.txt", "a+");
+        fputs (nome, fp);
+        fputs (" entrou no chat!\n\n", fp);
+        system ("cls");
+        printf("Bem vindo ao chat, ");
+        printf(nome);
+        printf("!\n\n");
+        fclose(fp);
+
+    while (0==0){
+        fp=fopen("LOG.txt", "a+");
+        gets (string);
+        if (strcmp (string,"/help")==0){
+            printf("\n     /help = imprime os comandos\n");
+            printf("\n     /clear = limpa os textos do cliente\n");
+            printf("\n     /exit = sai do programa \n\n");}
+        if (strcmp (string,"/exit")==0){
+            fputs(nome, fp);
+            fputs(" saiu do chat.", fp);
+            exit(1);}
+        if (strcmp (string,"/clear")==0){system ("cls");}
+        else{
+        fputs(nome, fp);
+        fputs(": ", fp);
+        fputs(string, fp);
+        fputs("\n\n", fp);
+    }
+        fclose(fp);
+    }
+    return 0;
+}
